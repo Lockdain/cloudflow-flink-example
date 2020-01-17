@@ -1,0 +1,100 @@
+{
+  "name": "ProspectEvent",
+  "type": "record",
+  "namespace": "com.ey.model",
+  "fields": [
+    {
+      "name": "journeyId",
+      "type": "int"
+    },
+    {
+      "name": "correlationId",
+      "type": "string"
+    },
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "rootEventType",
+      "type": "string"
+    },
+    {
+      "name": "customerType",
+      "type": "string"
+    },
+    {
+      "name": "geo",
+      "type": "string"
+    },
+    {
+      "name": "createTime",
+      "type": "long"
+    },
+    {
+      "name": "CustomerDetails",
+      "type": {
+        "name": "customerDetails",
+        "type": "record",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "type": "string"
+          }
+        ]
+      },
+      "default": null
+    },
+    {
+      "name": "contextData",
+      "type": {
+        "name": "contextData",
+        "type": "record",
+        "fields": [
+          {
+            "name": "consent",
+            "type": "boolean"
+          },
+          {
+            "name": "preferences",
+            "type": "string"
+          },
+          {
+            "name": "loanProductID",
+            "type": "string"
+          },
+          {
+            "name": "customerFollowUp",
+            "type": {
+              "name": "customerFollowUp",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "channelType",
+                  "type": "string"
+                },
+                {
+                  "name": "timeStamp",
+                  "type": "int"
+                },
+                {
+                  "name": "ccEmpId",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "default": null
+    },
+    {
+      "name": "qualified",
+      "type": "string"
+    }
+  ]
+}
